@@ -50,7 +50,8 @@ const SliderGallery = React.memo((props) => {
         spaceBetween: 24,
       }
     },
-    onSlideChange: () => console.log('slide change'),
+    // TODO: need remove console - it only example to get the index
+    onSlideChange: (e) => console.log('slide change '+ e.realIndex),
   };
 
   return (
@@ -58,7 +59,8 @@ const SliderGallery = React.memo((props) => {
       <Swiper {...params}>
         {imagesList.map(
           (image, idx) =>
-            console.log(`Showing image set ${image}`) || (
+           // TODO: need remove console - it only example to get image item
+            console.log(`Showing image set ${image.title}`) || (
               <SwiperSlide key={`slide_${idx}`}>
                 <img
                   alt={image.title}
